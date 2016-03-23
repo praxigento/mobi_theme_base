@@ -2,6 +2,9 @@
    "require": {
        "praxigento/mobi_mage2_theme": "dev-master"
    },
-  "repositories": {"https://github.com/praxigento/mobi_mage2_theme.git"},
+  "repositories": {
+      "type": "vcs",
+      "url": "https://github.com/praxigento/mobi_mage2_theme"
+  },
   "minimum-stability": "dev"
 }
