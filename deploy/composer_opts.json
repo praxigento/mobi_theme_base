@@ -1,0 +1,7 @@
+{
+   "require": {
+       "praxigento/mobi_mage2_theme": "dev-master"
+   },
+  "repositories": {"https://github.com/praxigento/mobi_mage2_theme.git"},
+  "minimum-stability": "dev"
+}
