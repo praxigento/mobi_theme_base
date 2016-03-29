@@ -1,7 +1,7 @@
 <config
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
-    <module name="Praxigento_Magento2theme" setup_version="0.1.0">
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:module/etc/module.xsd">
+    <module name="Praxigento_Magento2Theme" setup_version="0.1.0">
         <!-- Setup dependencies hierarchy -->
         <!--<sequence>-->
         <!--<module name="Vendor_Module"/>-->

@@ -19,7 +19,7 @@
       "src/registration.php"
     ],
     "psr-4": {
-      "Praxigento\\Mage2theme\\": "src/"
+      "Praxigento\\Mage2Theme\\": "src/"
     }
   }
 }
