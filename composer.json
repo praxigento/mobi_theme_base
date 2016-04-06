@@ -1,7 +1,12 @@
 {
   "name": "praxigento/mobi_mage2_theme",
   "description": "Praxigeto theme for Magento 2",
-  "type": "magento2-module",
+  "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/theme-frontend-blank": "100.0.*",
+        "magento/framework": "100.0.*"
+   },
+  "type": "magento2-theme",
   "homepage": "https://github.com/praxigento/mobi_mage2_theme",
   "license": "MIT",
   "authors": [
