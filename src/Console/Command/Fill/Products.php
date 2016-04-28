@@ -3,7 +3,7 @@
  *
  */
 
-namespace Praxigento\Magento2Theme\Console\Command\Fill\Products;
+namespace Praxigento\Magento2Theme\Console\Command\Fill;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\Setup\Model\ObjectManagerProvider;
 use Symfony\Component\Console\Command\Command;
