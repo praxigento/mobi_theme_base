@@ -3,7 +3,7 @@
  *
  */
 
-namespace Praxigento\Magento2Theme\Console\Command\Fill;
+namespace Praxigento\Mage2Theme\Console\Command\Fill;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\Setup\Model\ObjectManagerProvider;
 use Symfony\Component\Console\Command\Command;
@@ -24,7 +24,7 @@ class Products extends Command
 
     protected function configure()
     {
-        $this->setName('prxgt:theme:replicate-products');
+        $this->setName('prxgt:theme:fill-some-products');
         $this->setDescription('Fill Magento with some products and categories.');
         parent::configure();
     }
