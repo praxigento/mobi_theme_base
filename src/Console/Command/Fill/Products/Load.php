@@ -42,12 +42,56 @@ class Load
         $this->_logger->debug('Load data for magento theme begin.');
         $this->_conn->beginTransaction();
         try {
-            $catId = $this->_createMageCategory('Some Products');
-            $prodId = $this->_createMageProduct($catId, 'sku001');
+            /*
+            * A Dishes
+            */
+            $catId = $this->_createMageCategory('Dishes');
+            /* A Cup */
+            $prodId = $this->_createMageProduct($catId, 'sku001', 'Cup', 12.35);
             /* create stock items */
-            $stockItemId01 = $this->_createMageStockItem($prodId);
+            $stockItemId = $this->_createMageStockItem($prodId);
             /* add qtys to products */
-            $this->_createQty($stockItemId01, 100);
+            $this->_createQty($stockItemId, 250);
+
+            /* A Plate */
+            $prodId = $this->_createMageProduct($catId, 'sku002', 'Plate', 15.07);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 350);
+
+            /* A Saucer */
+            $prodId = $this->_createMageProduct($catId, 'sku003', 'Saucer', 7.18);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 50);
+
+
+            /*
+            * Furniture
+            */
+            $catId = $this->_createMageCategory('Furniture');
+            /* A Table */
+            $prodId = $this->_createMageProduct($catId, 'sku101', 'Table', 350);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 5000);
+
+            /* A Chair */
+            $prodId = $this->_createMageProduct($catId, 'sku102', 'Chair', 150);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 10000);
+
+            /* A cupboard */
+            $prodId = $this->_createMageProduct($catId, 'sku103', 'cupboard', 500);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 3500);
         } finally {
             $this->_conn->commit();
             //$this->_conn->rollBack();
@@ -77,7 +121,7 @@ class Load
      *
      * @return int ID of the new entity
      */
-    private function _createMageProduct($catId, $sku)
+    private function _createMageProduct($catId, $sku, $name, $price)
     {
         /**
          * Initialize factories using Object Manager.
@@ -108,8 +152,8 @@ class Load
         /** @var  $product \Magento\Catalog\Api\Data\ProductInterface */
         $product = $this->_manObj->create(\Magento\Catalog\Api\Data\ProductInterface::class);
         $product->setSku($sku);
-        $product->setName('Product ' . $sku);
-        $product->setPrice(12.34);
+        $product->setName($name);
+        $product->setPrice($price);
         $product->setAttributeSetId($attrSetId);
         $product->setTypeId(\Magento\Catalog\Model\Product\Type::TYPE_SIMPLE);
         $saved = $productFactory->save($product);
