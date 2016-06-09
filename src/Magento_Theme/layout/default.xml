@@ -8,7 +8,7 @@
     <body>
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_file" xsi:type="string">images/praxigento-logo.png</argument>
             </arguments>
         </referenceBlock>
     </body>
