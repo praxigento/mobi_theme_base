@@ -1,10 +1,22 @@
 {
-   "require": {
-       "praxigento/mobi_mage2_theme": "dev-master"
-   },
-  "repositories": [{
-      "type": "vcs",
-      "url": "https://github.com/praxigento/mobi_mage2_theme"
-  }],
-  "minimum-stability": "dev"
+    "require": {
+        "praxigento/mobi_mage2_theme": "dev-master",
+        "mgtcommerce/module-mgtdevelopertoolbar": "dev-master",
+        "ho-nl/magento2-templatehints": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/praxigento/mobi_mage2_theme"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/mgtcommerce/Mgt_Developertoolbar"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:ho-nl/magento2-Ho_Templatehints.git"
+        }
+    ],
+    "minimum-stability": "dev"
 }
