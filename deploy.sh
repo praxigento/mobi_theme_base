@@ -95,6 +95,7 @@ else
     chmod -R g+w $M2_ROOT/var
     chmod -R g+w $M2_ROOT/pub
     chmod u+x $M2_ROOT/bin/magento
+    chmod u+x frontend_refresh.sh
     chmod -R go-w $M2_ROOT/app/etc
 fi
 
