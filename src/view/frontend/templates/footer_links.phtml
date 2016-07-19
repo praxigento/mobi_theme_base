@@ -1,0 +1,52 @@
+<?php
+/* @var \Magento\Framework\View\Element\Html\Links $this */
+
+$html = '';
+if ($this->getLinks()) {
+    $html .= ($this->hasCssClass() ? '
+    <style>
+    @media only screen and (min-width: 768px) {
+        .prxgt-footer-links-block {
+            padding-bottom: 140px;
+        }
+        .prxgt-footer-links {
+            float: left;
+            margin-right: 1.5%;
+            width: 15%;
+        }
+    }
+    </style>' : '');
+    $column[1] = '';
+    $column[2] = '';
+    $column[3] = '';
+    $column[4] = '';
+
+    $column[1] = '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
+                $this->getCssClass()
+            ) . '"' : '') . '>';
+    $column[2] =  '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
+                $this->getCssClass()
+            ) . '"' : '') . '>';
+    $column[3] = '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
+                $this->getCssClass()
+            ) . '"' : '') . '>';
+    $column[4] = '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
+                $this->getCssClass()
+            ) . '"' : '') . '>';
+    $i = 0;
+    foreach ($this->getLinks() as $link) {
+        $column[(int)($i % 4) + 1] .= $this->renderLink($link);
+        $i++;
+    }
+    $column[1] .= '</ul>';
+    $column[2] .= '</ul>';
+    $column[3] .= '</ul>';
+    $column[4] .= '</ul>';
+    $html .=
+        '<div class="prxgt-footer-links-block"> <div class="prxgt-footer-links"><h4>Column 1</h4>'.$column[1].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Column 2</h4>'.$column[2].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Column 3</h4>'.$column[3].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Column 4</h4>'.$column[4].'</div> </div>';
+}
+
+echo $html;

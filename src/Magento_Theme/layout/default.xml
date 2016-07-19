@@ -6,6 +6,7 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <!--<referenceBlock name="footer_links" remove="true" />-->
         <!--<referenceBlock name="top.search" remove="true" />-->
         <!--<referenceBlock name="logo" remove="true" />-->
         <!--<referenceBlock name="minicart" remove="true" />-->
@@ -72,5 +73,39 @@
                 <argument name="logo_file" xsi:type="string">images/praxigento-logo.png</argument>
             </arguments>
         </referenceBlock>
+<!--
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer-links-static-block-1">
+                <arguments>
+                    <argument name="footer-links-static-block-1" xsi:type="string">footer-links-static-block-1</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer_links_static_block_2">
+                <arguments>
+                    <argument name="footer-links-static-block-2" xsi:type="string">footer_links_static_block_2</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer_links_static_block_3">
+                <arguments>
+                    <argument name="footer-links-static-block-3" xsi:type="string">footer_links_static_block_3</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        -->
+        <referenceBlock name="footer_links">
+            <arguments>
+                <argument name="template" xsi:type="string">Praxigento_Magento2Theme::footer_links.phtml</argument>
+            </arguments>
+        </referenceBlock>
+
+        <!--<referenceBlock name="footer_links">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Praxigento_Magento2Theme::footer_links.phtml</argument>
+            </action>
+        </referenceBlock>-->
     </body>
 </page>
