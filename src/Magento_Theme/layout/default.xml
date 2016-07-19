@@ -101,11 +101,5 @@
                 <argument name="template" xsi:type="string">Praxigento_Magento2Theme::footer_links.phtml</argument>
             </arguments>
         </referenceBlock>
-
-        <!--<referenceBlock name="footer_links">
-            <action method="setTemplate">
-                <argument name="template" xsi:type="string">Praxigento_Magento2Theme::footer_links.phtml</argument>
-            </action>
-        </referenceBlock>-->
     </body>
 </page>
