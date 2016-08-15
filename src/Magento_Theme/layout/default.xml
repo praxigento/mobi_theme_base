@@ -5,6 +5,15 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!--<head>-->
+        <!--<css   src="Praxigento_Magento2Theme::css/jquery.mobile-1.4.5.min.css"/>-->
+        <!-- <css   src="Praxigento_Magento2Theme::css/jquery.mobile-1.4.3.min.css"/> -->
+        <!--<link  src="Praxigento_Magento2Theme::js/jquery-1.11.3.min.js" type='text/javascript'/>-->
+        <!--<link  src="Praxigento_Magento2Theme::js/jquery.mobile-1.4.5.min.js" type='text/javascript'/>-->
+        <!-- <link  src="Praxigento_Magento2Theme::js/jquery.mobile-1.4.3.js" type='text/javascript'/> -->
+        <!--<remove file="Lib::jquery/jquery.mobile.custom.js"/>-->
+        <!--<link  src="Lib::jquery/jquery.mobile.custom.js" remove="true" type='text/javascript'/>-->
+    <!--</head>-->
     <body>
         <referenceContainer name="header-wrapper">
             <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" />
