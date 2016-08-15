@@ -8,6 +8,11 @@ if ($this->getLinks()) {
     @media only screen and (min-width: 768px) {
         .prxgt-footer-links-block {
             padding-bottom: 140px;
+            display: block;
+        }
+        .prxgt-footer-links-small-size-block {
+            padding-bottom: 140px;
+            display: none;
         }
         .prxgt-footer-links {
             float: left;
@@ -15,11 +20,26 @@ if ($this->getLinks()) {
             width: 15%;
         }
     }
+    @media only screen and (max-width: 767px) {
+        .prxgt-footer-links-block {
+            display: none;
+        }
+        .prxgt-footer-links-small-size-block {
+            display: block;
+        }
+        .prxgt-footer-links {
+            width: 100%;
+        }
+    }
     </style>' : '');
     $column[1] = '';
     $column[2] = '';
     $column[3] = '';
     $column[4] = '';
+    $columnSmallSize[1] = '';
+    $columnSmallSize[2] = '';
+    $columnSmallSize[3] = '';
+    $columnSmallSize[4] = '';
 
     $column[1] = '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
                 $this->getCssClass()
@@ -33,20 +53,45 @@ if ($this->getLinks()) {
     $column[4] = '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
                 $this->getCssClass()
             ) . '"' : '') . '>';
+
+    $columnSmallSize[1] = '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
+                $this->getCssClass()
+            ) . '"' : '') . ' data-role="content">';
+    $columnSmallSize[2] =  '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
+                $this->getCssClass()
+            ) . '"' : '') . ' data-role="content">';
+    $columnSmallSize[3] = '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
+                $this->getCssClass()
+            ) . '"' : '') . ' data-role="content">';
+    $columnSmallSize[4] = '<ul' . ($this->hasCssClass() ? ' class="' . $this->escapeHtml(
+                $this->getCssClass()
+            ) . '"' : '') . ' data-role="content">';
     $i = 0;
     foreach ($this->getLinks() as $link) {
         $column[(int)($i % 4) + 1] .= $this->renderLink($link);
+        $columnSmallSize[(int)($i % 4) + 1] .= $this->renderLink($link);
         $i++;
     }
     $column[1] .= '</ul>';
     $column[2] .= '</ul>';
     $column[3] .= '</ul>';
     $column[4] .= '</ul>';
+
+    $columnSmallSize[1] .= '</ul>';
+    $columnSmallSize[2] .= '</ul>';
+    $columnSmallSize[3] .= '</ul>';
+    $columnSmallSize[4] .= '</ul>';
+
     $html .=
-        '<div class="prxgt-footer-links-block"> <div class="prxgt-footer-links"><h4>Column 1</h4>'.$column[1].'</div>'.
-        '<div class="prxgt-footer-links"><h4>Column 2</h4>'.$column[2].'</div>'.
-        '<div class="prxgt-footer-links"><h4>Column 3</h4>'.$column[3].'</div>'.
-        '<div class="prxgt-footer-links"><h4>Column 4</h4>'.$column[4].'</div> </div>';
+        '<div class="prxgt-footer-links-block"> <div class="prxgt-footer-links"><h4>Privacy</h4>'.$column[1].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Search</h4>'.$column[2].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Contacts</h4>'.$column[3].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Orders</h4>'.$column[4].'</div> </div>';
+    $html .=
+        '<div class="prxgt-footer-links-small-size-block"> <div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4>Privacy</h4></div>'.$columnSmallSize[1].'</div>'.
+        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4>Search</h4></div>'.$columnSmallSize[2].'</div>'.
+        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4>Contacts</h4></div>'.$columnSmallSize[3].'</div>'.
+        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4>Orders</h4></div>'.$columnSmallSize[4].'</div> </div>';
 }
 
 echo $html;
