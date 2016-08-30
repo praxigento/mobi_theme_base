@@ -5,6 +5,11 @@ $html = '';
 if ($this->getLinks()) {
     $html .= ($this->hasCssClass() ? '
     <style>
+    .prxgtTopWindow {
+    position: fixed;
+    top: 0;
+    z-index:9999;
+    }
     @media only screen and (min-width: 768px) {
         .prxgt-footer-links-block {
             padding-bottom: 140px;
@@ -32,6 +37,23 @@ if ($this->getLinks()) {
         }
     }
     </style>' : '');
+    $html .= '
+<script type="text/javascript">
+    $(document).ready(function () {
+        var objToStick = $("#prxgt-footer-links-block"); //Получаем нужный объект
+        var topOfObjToStick = $(objToStick).offset().top; //Получаем начальное расположение нашего блока
+
+        $(window).scroll(function () {
+            var windowScroll = $(window).scrollTop(); //Получаем величину, показывающую на сколько прокручено окно
+
+            if (windowScroll > topOfObjToStick) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
+                $(objToStick).addClass("prxgtTopWindow");
+            } else {
+                $(objToStick).removeClass("prxgtTopWindow");
+            };
+        });
+    });
+</script>';
     $column[1] = '';
     $column[2] = '';
     $column[3] = '';
@@ -83,7 +105,7 @@ if ($this->getLinks()) {
     $columnSmallSize[4] .= '</ul>';
 
     $html .=
-        '<div class="prxgt-footer-links-block"> <div class="prxgt-footer-links"><h4>Privacy</h4>'.$column[1].'</div>'.
+        '<div class="prxgt-footer-links-block" id="prxgt-footer-links-block"> <div class="prxgt-footer-links"><h4>Privacy</h4>'.$column[1].'</div>'.
         '<div class="prxgt-footer-links"><h4>Search</h4>'.$column[2].'</div>'.
         '<div class="prxgt-footer-links"><h4>Contacts</h4>'.$column[3].'</div>'.
         '<div class="prxgt-footer-links"><h4>Orders</h4>'.$column[4].'</div> </div>';
