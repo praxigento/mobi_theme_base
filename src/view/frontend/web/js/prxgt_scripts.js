@@ -16,10 +16,11 @@ require([
     $(window).scroll(function () {
     var windowScroll = $(window).scrollTop(); //Получаем величину, показывающую на сколько прокручено окно
 
-    if (windowScroll > topOfObjToStick ) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
-    $(objToStick).addClass("prxgtTopWindow");
+    if ((windowScroll > topOfObjToStick)  || true ) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
+    $(objToStick).addClass("prxgtBottomLine");
+        //$("#element").collapsible({ collapsible: true});
     } else {
-    $(objToStick).removeClass("prxgtTopWindow");
+    $(objToStick).removeClass("prxgtBottomLine");
     }
     });
   });
