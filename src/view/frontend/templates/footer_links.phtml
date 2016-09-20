@@ -36,8 +36,12 @@ if ($this->getLinks()) {
     padding-left: 10px;
     }
     @media only screen and (min-width: 768px) {
+    div#prxgt-footer-links-block-sticky.prxgtBottomLine.prxgtHidden
+    {
+    display: none;
+    }
         .prxgt-footer-links-block {
-            /* padding-bottom: 140px; */
+            padding-bottom: 160px;
             display: block;
             width: 80%;
         }
@@ -47,7 +51,7 @@ if ($this->getLinks()) {
         }
         .prxgt-footer-links {
             float: left;
-            margin-right: 1.5%;
+            /* margin-right: 1.5%; */
             /* width: 100%; */
             width: 20%;
         }
@@ -118,14 +122,15 @@ if ($this->getLinks()) {
     $columnSmallSize[3] .= '</ul>';
     $columnSmallSize[4] .= '</ul>';
 
-    /* <h4>Privacy   Search    Contacts   Orders</h4>
-    <div class="prxgt-footer-links"><h4>Privacy</h4></div>
-        <div class="prxgt-footer-links"><h4>Search</h4></div>
-        <div class="prxgt-footer-links"><h4>Contacts</h4></div>
-        <div class="prxgt-footer-links"><h4>Orders</h4></div>*/
     $html .=
-        '<div class="prxgt-footer-links-block prxgtBottomLine" id="prxgt-footer-links-block">
-        <div data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' >
+        '<div class="prxgt-footer-links-block" id="prxgt-footer-links-block"> <div class="prxgt-footer-links"><h4>Privacy</h4>'.$column[1].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Search</h4>'.$column[2].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Contacts</h4>'.$column[3].'</div>'.
+        '<div class="prxgt-footer-links"><h4>Orders</h4>'.$column[4].'</div>
+        </div>'.
+
+        '<div class="prxgtBottomLine prxgtHidden" id="prxgt-footer-links-block-sticky">
+        <div id="prxgt-footer-links-collapsible" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' >
         <div data-role="title">
             <div>
              <div class="prxgt-footer-links"><h4>Privacy</h4></div>
@@ -142,8 +147,8 @@ if ($this->getLinks()) {
         </div>
         </div>
 
-                <div id="prxgt-back-top-button" style="display: none;"><a title="Top" href="#top">Top</a></div>
-        </div>
+          </div>
+        <div id="prxgt-back-top-button" style="display: none;"><a title="Top" href="#top">Top</a></div>
         ';
 
     $html .=

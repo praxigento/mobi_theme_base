@@ -11,16 +11,27 @@ require([
 
     $(document).ready(function () {
     var objToStick = $("#prxgt-footer-links-block"); //Получаем нужный объект
-    var topOfObjToStick = $(objToStick).offset().top; //Получаем начальное расположение нашего блока
+    var topOfObjToStick = objToStick.offset().top; //Получаем начальное расположение нашего блока
+
+    var windowScroll = $(window).scrollTop(); //Получаем величину, показывающую на сколько прокручено окно
+        if ((windowScroll + $(window).height() < topOfObjToStick) ) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
+            $("#prxgt-footer-links-block-sticky").removeClass("prxgtHidden");
+        } else {
+            $("#prxgt-footer-links-block-sticky").addClass("prxgtHidden");
+        }
+
 
     $(window).scroll(function () {
     var windowScroll = $(window).scrollTop(); //Получаем величину, показывающую на сколько прокручено окно
 
-    if ((windowScroll > topOfObjToStick)  || true ) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
-    $(objToStick).addClass("prxgtBottomLine");
-        //$("#element").collapsible({ collapsible: true});
+    if ((windowScroll + $(window).height() < topOfObjToStick) ) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
+        $("#prxgt-footer-links-block-sticky").removeClass("prxgtHidden");
+
+        //$("#prxgt-footer-links-collapsible" ).collapsible("activate");
     } else {
-    $(objToStick).removeClass("prxgtBottomLine");
+        $("#prxgt-footer-links-block-sticky").addClass("prxgtHidden");
+       $("#prxgt-footer-links-collapsible" ).collapsible("deactivate");
+        //objToStick.removeClass("prxgtBottomLine");
     }
     });
   });
