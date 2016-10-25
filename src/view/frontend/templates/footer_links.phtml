@@ -77,6 +77,10 @@ if ($this->getLinks()) {
              <div class="prxgt-footer-links"><h4>Search</h4></div>
              <div class="prxgt-footer-links"><h4>Contacts</h4></div>
              <div class="prxgt-footer-links"><h4>Orders</h4></div>
+        <div class="prxgt-sticky-newsletter">'.
+        //$this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Theme::html/test.phtml")->toHtml()
+        $this->getLayout()->createBlock("Magento\Newsletter\Block\Subscribe")->setTemplate("Magento_Newsletter::subscribe.phtml")->toHtml()
+        .'</div>
             </div>
         </div>
         <div data-role="content">
