@@ -1,27 +1,8 @@
 {
-  "name": "praxigento/mobi_mage2_theme",
-  "description": "Praxigeto theme for Magento 2",
-  "require": {
-    "praxigento/mage2_ext_jira_feedback": "dev-master",
-    "mgtcommerce/module-mgtdevelopertoolbar": "dev-master",
-    "ho-nl/magento2-templatehints": "dev-master"
-   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/praxigento/mage2_ext_jira_feedback"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/mgtcommerce/Mgt_Developertoolbar"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:ho-nl/magento2-Ho_Templatehints.git"
-    }
-  ],
+  "name": "praxigento/mobi_theme_base",
+  "description": "Praxigento theme for Magento 2",
   "type": "magento2-theme",
-  "homepage": "https://github.com/praxigento/mobi_mage2_theme",
+  "homepage": "https://github.com/praxigento/mobi_theme_base",
   "license": "MIT",
   "authors": [
     {
@@ -35,10 +16,10 @@
   ],
   "autoload": {
     "files": [
-      "src/registration.php"
+      "registration.php"
     ],
     "psr-4": {
-      "Praxigento\\Mage2Theme\\": "src/"
+      "Praxigento\\Mage2Theme\\": ""
     }
   }
 }
