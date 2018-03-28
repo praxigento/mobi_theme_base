@@ -25,6 +25,21 @@ class Products extends Command
         $this->_manObj = $manObj;
     }
 
+    /**
+     * Sets area code to start a session for replication.
+     */
+    private function _setAreaCode()
+    {
+        $areaCode = 'adminhtml';
+        /** @var \Magento\Framework\App\State $appState */
+        $appState = $this->_manObj->get(\Magento\Framework\App\State::class);
+        $appState->setAreaCode($areaCode);
+        /** @var \Magento\Framework\ObjectManager\ConfigLoaderInterface $configLoader */
+        $configLoader = $this->_manObj->get(\Magento\Framework\ObjectManager\ConfigLoaderInterface::class);
+        $config = $configLoader->load($areaCode);
+        $this->_manObj->configure($config);
+    }
+
     protected function configure()
     {
         $this->setName('prxgt:theme:fill-some-products');
@@ -44,20 +59,5 @@ class Products extends Command
         $loader = $this->_manObj->get(\Praxigento\Mage2Theme\Console\Command\Fill\Products\Load::class);
         $loader->execute();
         $output->writeln('<info>Store filled with Products for Magento 2 Theme.<info>');
-    }
-
-    /**
-     * Sets area code to start a session for replication.
-     */
-    private function _setAreaCode()
-    {
-        $areaCode = 'adminhtml';
-        /** @var \Magento\Framework\App\State $appState */
-        $appState = $this->_manObj->get(\Magento\Framework\App\State::class);
-        $appState->setAreaCode($areaCode);
-        /** @var \Magento\Framework\ObjectManager\ConfigLoaderInterface $configLoader */
-        $configLoader = $this->_manObj->get(\Magento\Framework\ObjectManager\ConfigLoaderInterface::class);
-        $config = $configLoader->load($areaCode);
-        $this->_manObj->configure($config);
     }
 }

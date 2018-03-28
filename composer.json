@@ -2,10 +2,24 @@
   "name": "praxigento/mobi_mage2_theme",
   "description": "Praxigeto theme for Magento 2",
   "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0",
-        "magento/theme-frontend-blank": "100.1.*",
-        "magento/framework": "100.1.*"
+    "praxigento/mage2_ext_jira_feedback": "dev-master",
+    "mgtcommerce/module-mgtdevelopertoolbar": "dev-master",
+    "ho-nl/magento2-templatehints": "dev-master"
    },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/praxigento/mage2_ext_jira_feedback"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/mgtcommerce/Mgt_Developertoolbar"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:ho-nl/magento2-Ho_Templatehints.git"
+    }
+  ],
   "type": "magento2-theme",
   "homepage": "https://github.com/praxigento/mobi_mage2_theme",
   "license": "MIT",

@@ -6,6 +6,6 @@
 namespace Praxigento\Mage2Theme;
 
 class Config {
-    const THEME = 'frontend/Praxigento/Magento2Theme';
     const MODULE = 'Praxigento_Magento2Theme';
+    const THEME = 'frontend/Praxigento/Magento2Theme';
 }

@@ -4,12 +4,12 @@
  */
 namespace Praxigento\Mage2Theme\Console\Command\Fill\Products;
 
-use Magento\Framework\App\ObjectManager;
-use Magento\Framework\ObjectManagerInterface;
 use Magento\CatalogInventory\Api\Data\StockInterface;
 use Magento\CatalogInventory\Api\Data\StockItemInterface;
 use Magento\CatalogInventory\Api\StockItemRepositoryInterface;
 use Magento\CatalogInventory\Api\StockRepositoryInterface;
+use Magento\Framework\App\ObjectManager;
+use Magento\Framework\ObjectManagerInterface;
 
 class Load
 {
@@ -20,12 +20,12 @@ class Load
     protected $_logger;
     /** @var  ObjectManagerInterface */
     protected $_manObj;
-    /** @var \Mage_Core_Model_Resource|\Magento\Framework\App\ResourceConnection */
-    protected $_resource;
     /** @var  \Magento\CatalogInventory\Api\StockRepositoryInterface */
     private $_repoMageStock;
     /** @var  \Magento\CatalogInventory\Api\StockItemRepositoryInterface */
     private $_repoMageStockItem;
+    /** @var \Mage_Core_Model_Resource|\Magento\Framework\App\ResourceConnection */
+    protected $_resource;
 
     public function __construct()
     {
@@ -35,68 +35,6 @@ class Load
         $this->_conn = $this->_resource->getConnection();
         $this->_repoMageStock = $this->_manObj->get(StockRepositoryInterface::class);
         $this->_repoMageStockItem = $this->_manObj->get(StockItemRepositoryInterface::class);
-    }
-
-    public function execute()
-    {
-        $this->_logger->debug('Load data for magento theme begin.');
-        $this->_conn->beginTransaction();
-        try {
-            /*
-            * A Dishes
-            */
-            $catId = $this->_createMageCategory('Dishes');
-            /* A Cup */
-            $prodId = $this->_createMageProduct($catId, 'sku001', 'Cup', 12.35);
-            /* create stock items */
-            $stockItemId = $this->_createMageStockItem($prodId);
-            /* add qtys to products */
-            $this->_createQty($stockItemId, 250);
-
-            /* A Plate */
-            $prodId = $this->_createMageProduct($catId, 'sku002', 'Plate', 15.07);
-            /* create stock items */
-            $stockItemId = $this->_createMageStockItem($prodId);
-            /* add qtys to products */
-            $this->_createQty($stockItemId, 350);
-
-            /* A Saucer */
-            $prodId = $this->_createMageProduct($catId, 'sku003', 'Saucer', 7.18);
-            /* create stock items */
-            $stockItemId = $this->_createMageStockItem($prodId);
-            /* add qtys to products */
-            $this->_createQty($stockItemId, 50);
-
-
-            /*
-            * Furniture
-            */
-            $catId = $this->_createMageCategory('Furniture');
-            /* A Table */
-            $prodId = $this->_createMageProduct($catId, 'sku101', 'Table', 350);
-            /* create stock items */
-            $stockItemId = $this->_createMageStockItem($prodId);
-            /* add qtys to products */
-            $this->_createQty($stockItemId, 5000);
-
-            /* A Chair */
-            $prodId = $this->_createMageProduct($catId, 'sku102', 'Chair', 150);
-            /* create stock items */
-            $stockItemId = $this->_createMageStockItem($prodId);
-            /* add qtys to products */
-            $this->_createQty($stockItemId, 10000);
-
-            /* A cupboard */
-            $prodId = $this->_createMageProduct($catId, 'sku103', 'cupboard', 500);
-            /* create stock items */
-            $stockItemId = $this->_createMageStockItem($prodId);
-            /* add qtys to products */
-            $this->_createQty($stockItemId, 3500);
-        } finally {
-            $this->_conn->commit();
-            //$this->_conn->rollBack();
-        }
-        $this->_logger->debug('Load data for magento theme end.');
     }
 
     private function _createMageCategory($name)
@@ -169,7 +107,6 @@ class Load
         return $result;
     }
 
-
     private function _createMageStockItem($prodId)
     {
         /* check if stock item already exist */
@@ -201,5 +138,67 @@ class Load
         $stockItem->setQty($qty);
         $stockItem->setIsInStock(true);
         $this->_repoMageStockItem->save($stockItem);
+    }
+
+    public function execute()
+    {
+        $this->_logger->debug('Load data for magento theme begin.');
+        $this->_conn->beginTransaction();
+        try {
+            /*
+            * A Dishes
+            */
+            $catId = $this->_createMageCategory('Dishes');
+            /* A Cup */
+            $prodId = $this->_createMageProduct($catId, 'sku001', 'Cup', 12.35);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 250);
+
+            /* A Plate */
+            $prodId = $this->_createMageProduct($catId, 'sku002', 'Plate', 15.07);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 350);
+
+            /* A Saucer */
+            $prodId = $this->_createMageProduct($catId, 'sku003', 'Saucer', 7.18);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 50);
+
+
+            /*
+            * Furniture
+            */
+            $catId = $this->_createMageCategory('Furniture');
+            /* A Table */
+            $prodId = $this->_createMageProduct($catId, 'sku101', 'Table', 350);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 5000);
+
+            /* A Chair */
+            $prodId = $this->_createMageProduct($catId, 'sku102', 'Chair', 150);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 10000);
+
+            /* A cupboard */
+            $prodId = $this->_createMageProduct($catId, 'sku103', 'cupboard', 500);
+            /* create stock items */
+            $stockItemId = $this->_createMageStockItem($prodId);
+            /* add qtys to products */
+            $this->_createQty($stockItemId, 3500);
+        } finally {
+            $this->_conn->commit();
+            //$this->_conn->rollBack();
+        }
+        $this->_logger->debug('Load data for magento theme end.');
     }
 }
