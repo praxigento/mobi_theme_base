@@ -1,2 +1,2 @@
-# mobi_mage2_theme
-MOBI theme for Magento 2
+# mobi_theme_base
+MOBI base theme for Magento 2

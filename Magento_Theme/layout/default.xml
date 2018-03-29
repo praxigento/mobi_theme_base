@@ -6,7 +6,7 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <link  src="Praxigento_Magento2Theme::js/prxgt_scripts.js" type='text/javascript'/>
+        <link src="Praxigento_ThemeBase::js/prxgt_scripts.js" type='text/javascript'/>
     </head>
     <body>
         <referenceContainer name="header-wrapper">
@@ -72,7 +72,7 @@
 
         <referenceBlock name="footer_links">
             <arguments>
-                <argument name="template" xsi:type="string">Praxigento_Magento2Theme::footer_links.phtml</argument>
+                <argument name="template" xsi:type="string">Praxigento_ThemeBase::footer_links.phtml</argument>
             </arguments>
         </referenceBlock>
     </body>
