@@ -2,6 +2,7 @@
 /**
  * Container for theme's constants (hardcoded configuration).
  *
+ * Dmitrii Makhov <makhovdmitrii@inbox.ru>
  */
 
 namespace Praxigento\ThemeBase;

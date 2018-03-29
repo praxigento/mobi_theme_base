@@ -2,7 +2,9 @@
 /**
  * Script to register M2-module
  *
+ * Dmitrii Makhov <makhovdmitrii@inbox.ru>
  */
+
 use Magento\Framework\Component\ComponentRegistrar as Registrar;
 use Praxigento\ThemeBase\Config as Config;
 
