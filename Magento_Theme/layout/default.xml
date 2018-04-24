@@ -10,8 +10,7 @@
     </head>
     <body>
         <referenceContainer name="header-wrapper">
-            <referenceBlock name="top.search" remove="true"/>
-            <block class="Magento\Framework\View\Element\Template" name="top.search1" as="topSearch1"
+            <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch"
                    template="Magento_Search::form.mini.phtml" before="minicart"/>
             <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
                 <arguments>
