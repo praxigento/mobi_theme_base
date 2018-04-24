@@ -10,6 +10,9 @@
     </head>
     <body>
         <referenceContainer name="header-wrapper">
+            <referenceBlock name="top.search" remove="true"/>
+            <block class="Magento\Framework\View\Element\Template" name="top.search1" as="topSearch1"
+                   template="Magento_Search::form.mini.phtml" before="minicart"/>
             <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
                 <arguments>
                     <argument name="logo_img_width" xsi:type="number">189</argument>
