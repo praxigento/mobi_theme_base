@@ -7,5 +7,8 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:module/etc/module.xsd">
     <module name="Praxigento_ThemeBase" setup_version="0.1.0">
+        <sequence>
+            <module name="Magento_Checkout"/>
+        </sequence>
     </module>
 </config>

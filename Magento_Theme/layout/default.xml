@@ -10,8 +10,11 @@
     </head>
     <body>
         <referenceContainer name="header-wrapper">
-            <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" />
-            <block class="Magento\Checkout\Block\Cart\Sidebar" name="minicart" as="minicart" template="cart/minicart.phtml" before="topsearch">
+            <!--
+            <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" zafter="minicart"--> />
+
+            <block class="Magento\Checkout\Block\Cart\Sidebar" name="minicart" as="minicart"
+                   template="Magento_Checkout::cart/minicart.phtml" before="topSearch">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="types" xsi:type="array"/>
@@ -31,7 +34,9 @@
                                             <item name="subtotal" xsi:type="array">
                                                 <item name="component" xsi:type="string">uiComponent</item>
                                                 <item name="config" xsi:type="array">
-                                                    <item name="template" xsi:type="string">Magento_Checkout/minicart/subtotal</item>
+                                                    <item name="template"
+                                                          xsi:type="string">Magento_Checkout/minicart/subtotal
+                                                    </item>
                                                 </item>
                                             </item>
                                         </item>
@@ -55,8 +60,7 @@
                 </arguments>
                 <container name="minicart.addons" label="Mini-cart promotion block"/>
             </block>
-
-
+            -->
             <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
                 <arguments>
                     <argument name="logo_img_width" xsi:type="number">189</argument>
