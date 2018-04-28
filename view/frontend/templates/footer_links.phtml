@@ -69,20 +69,20 @@ if ($this->getLinks()) {
      * Sticky block with links - id prxgt-footer-links-block-sticky
      * */
     $html .=
-        '<div class="prxgt-footer-links-block" id="prxgt-footer-links-block"> <div class="prxgt-footer-links"><h4>' . $this->__($columnName1) . '</h4>' . $column[1] . '</div>' .
-        '<div class="prxgt-footer-links"><h4>' . $this->__($columnName2) . '</h4>' . $column[2] . '</div>' .
-        '<div class="prxgt-footer-links"><h4>' . $this->__($columnName3) . '</h4>' . $column[3] . '</div>' .
-        '<div class="prxgt-footer-links"><h4>' . $this->__($columnName4) . '</h4>' . $column[4] . '</div>
+        '<div class="prxgt-footer-links-block" id="prxgt-footer-links-block"> <div class="prxgt-footer-links"><h4>' . __($columnName1) . '</h4>' . $column[1] . '</div>' .
+        '<div class="prxgt-footer-links"><h4>' . __($columnName2) . '</h4>' . $column[2] . '</div>' .
+        '<div class="prxgt-footer-links"><h4>' . __($columnName3) . '</h4>' . $column[3] . '</div>' .
+        '<div class="prxgt-footer-links"><h4>' . __($columnName4) . '</h4>' . $column[4] . '</div>
         </div>'.
 
         '<div class="prxgtBottomLine prxgtHidden" id="prxgt-footer-links-block-sticky">
         <div id="prxgt-footer-links-collapsible" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' >
         <div data-role="title">
             <div>
-             <div class="prxgt-footer-links"><h4>' . $this->__($columnName1) . '</h4></div>
-             <div class="prxgt-footer-links"><h4>' . $this->__($columnName2) . '</h4></div>
-             <div class="prxgt-footer-links"><h4>' . $this->__($columnName3) . '</h4></div>
-             <div class="prxgt-footer-links"><h4>' . $this->__($columnName4) . '</h4></div>
+             <div class="prxgt-footer-links"><h4>' . __($columnName1) . '</h4></div>
+             <div class="prxgt-footer-links"><h4>' . __($columnName2) . '</h4></div>
+             <div class="prxgt-footer-links"><h4>' . __($columnName3) . '</h4></div>
+             <div class="prxgt-footer-links"><h4>' . __($columnName4) . '</h4></div>
         <div class="prxgt-sticky-newsletter">'.
         $this->getLayout()->createBlock("Magento\Newsletter\Block\Subscribe")->setTemplate("Magento_Newsletter::subscribe.phtml")->toHtml()
         .'</div>
