@@ -24,7 +24,6 @@
                 <argument name="logo_file" xsi:type="string">images/praxigento-logo.png</argument>
             </arguments>
         </referenceBlock>
-
         <referenceBlock name="footer_links">
             <arguments>
                 <argument name="template" xsi:type="string">Praxigento_ThemeBase::footer_links.phtml</argument>
