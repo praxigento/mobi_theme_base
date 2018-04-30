@@ -102,10 +102,10 @@ if ($this->getLinks()) {
 
     /* Links view for small resolution */
     $html .=
-        '<div class="prxgt-footer-links-small-size-block"> <div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4><a href="#">Privacy</a></h4></div>'.$columnSmallSize[1].'</div>'.
-        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4><a href="#">Search</a></h4></div>'.$columnSmallSize[2].'</div>'.
-        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4><a href="#">Contacts</a></h4></div>'.$columnSmallSize[3].'</div>'.
-        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4><a href="#">Orders</a></h4></div>'.$columnSmallSize[4].'</div> </div>';
+        '<div class="prxgt-footer-links-small-size-block"> <div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4><a href="#">' . __($columnName1) . '</a></h4></div>' . $columnSmallSize[1] . '</div>' .
+        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4><a href="#">' . __($columnName2) . '</a></h4></div>' . $columnSmallSize[2] . '</div>' .
+        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4><a href="#">' . __($columnName3) . '</a></h4></div>' . $columnSmallSize[3] . '</div>' .
+        '<div class="prxgt-footer-links" data-mage-init=\'{"collapsible":{ "active": false, "animate": 200, "collapsible": true}}\' ><div data-role="title"><h4><a href="#">' . __($columnName4) . '</a></h4></div>' . $columnSmallSize[4] . '</div> </div>';
 }
 
 echo $html;
