@@ -34,7 +34,7 @@ require([
                     //$("#prxgt-footer-links-collapsible" ).collapsible("activate");
                 } else {
                     $("#prxgt-footer-links-block-sticky").addClass("prxgtHidden");
-                    $("#prxgt-footer-links-collapsible").collapsible("deactivate");
+                    // $("#prxgt-footer-links-collapsible").collapsible("deactivate");
                     //objToStick.removeClass("prxgtBottomLine");
                 }
             });
