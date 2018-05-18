@@ -29,5 +29,6 @@
                 <argument name="template" xsi:type="string">Praxigento_ThemeBase::footer_links.phtml</argument>
             </arguments>
         </referenceBlock>
+        <referenceBlock name="report.bugs" remove="true" />
     </body>
 </page>
