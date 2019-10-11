@@ -1,11 +1,5 @@
 require([
-    'jquery',
-    'mage/template',
-    'uiRegistry',
-    'jquery/ui',
-    'prototype',
-    'jquery/jquery-storageapi',
-    "mage/mage"
+    'jquery'
 ], function ($) {
     'use strict';
 
