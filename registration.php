@@ -2,7 +2,7 @@
 /**
  * Script to register M2-module
  *
- * Dmitrii Makhov <makhovdmitrii@inbox.ru>
+ * Dmitrii Makhov <dmitriimakhov@gmail.com>
  */
 
 use Magento\Framework\Component\ComponentRegistrar as Registrar;
