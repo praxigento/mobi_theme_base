@@ -10,7 +10,11 @@
     <body>
         <referenceContainer name="header-wrapper">
             <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch"
-                   template="Magento_Search::form.mini.phtml" before="minicart"/>
+                   template="Magento_Search::form.mini.phtml" before="minicart">
+                <arguments>
+                    <argument name="configProvider" xsi:type="object">Magento\Search\ViewModel\ConfigProvider</argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <referenceBlock name="footer_links">
             <block class="Magento\Framework\View\Element\Html\Link\Current"
