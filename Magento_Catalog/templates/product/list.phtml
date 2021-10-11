@@ -17,7 +17,8 @@ use Magento\Framework\App\Action\Action;
 ?>
 <?php
 $_productCollection = $block->getLoadedProductCollection();
-$_helper = $this->helper('Magento\Catalog\Helper\Output');
+/** @var \Magento\Catalog\Helper\Output $_helper */
+$_helper = $block->getData('outputHelper');
 ?>
 <?php if (!$_productCollection->count()): ?>
     <div class="message info empty"><div><?= /* @escapeNotVerified */ __('We can\'t find products matching the selection.') ?></div></div>
@@ -118,7 +119,7 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
             <?php endforeach; ?>
         </ol>
     </div>
-    <?= $block->getToolbarHtml() ?>
+    <?= $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
     <?php if (!$block->isRedirectToCartEnabled()) : ?>
         <script type="text/x-magento-init">
         {
